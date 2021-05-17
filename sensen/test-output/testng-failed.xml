@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="sensen.TS_002">
+      <class name="sensen.TS_001">
         <methods>
-          <include name="finalReviewValidation"/>
+          <include name="ValidationTest"/>
         </methods>
-      </class> <!-- sensen.TS_002 -->
+      </class> <!-- sensen.TS_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

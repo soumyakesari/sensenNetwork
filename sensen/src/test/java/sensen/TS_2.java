@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TS_002 {
+public class TS_2 {
 	
 	@Test
 	public void finalReviewValidation()
@@ -58,13 +58,14 @@ public class TS_002 {
 		 driver.findElement(By.xpath("//input[@id=\"state\"]")).sendKeys("QLD");
 		 driver.findElement(By.xpath("//input[@id=\"countryCode\"]")).sendKeys("AUS");
 		
-		 // click on pass button
-		 driver.findElement(By.xpath("//input[@value=\"passRemarksId\"]")).click();
-		 driver.findElement(By.xpath("//input[@value=\"passedRemarksManualEntry\"]")).click();
-		 driver.findElement(By.xpath("//input[@id=\"tktPassRemarks\"]")).sendKeys("Accepted");
+		 // click on reject button
+		 driver.findElement(By.xpath("//input[@value=\"rejectRemarksId\"]")).click();
+		 driver.findElement(By.xpath("//input[@id=\"manualEntryRejectionRemarks\"]")).click();
+		 driver.findElement(By.xpath("//input[@id=\"ticketRemarks\"]")).sendKeys("Rejected");
 		 
-		 //click on Accept button
-		 driver.findElement(By.xpath("//button[@id=\"pass\"]")).click();
+		 //click on Reject button
+		 driver.findElement(By.xpath("//button[@id=\"reject\"]")).click();
+		 driver.switchTo().alert().accept();
 		 
 		 
 		 

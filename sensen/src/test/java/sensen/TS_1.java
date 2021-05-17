@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TS_001 {
+public class TS_1 {
 
 	@Test
 	public void ValidationTest()
