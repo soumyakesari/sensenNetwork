@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TS_1 {
 
 	@Test
-	public void ValidationTest()
+	public void ValidationTest() throws InterruptedException
 	{
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
@@ -31,7 +31,9 @@ public class TS_1 {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Infringements']")));
 		driver.findElement(By.xpath("//a[text()='Infringements']")).click();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[text()='Initial Review']")).click();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//table/tbody/tr[1]/td[1]/a[@class=\"text-bold\"]")).click();
 
 
@@ -43,6 +45,7 @@ public class TS_1 {
 		textLocation1.click();
 		Select sel01 = new Select(textLocation1);
 		sel01.selectByVisibleText("BALLIDU CLOSE,ELANORA");
+		Thread.sleep(1000);
 
 		//Selecting officer
 		driver.findElement(By.xpath("//input[@value=\"offenceLocationDropDiv\"]")).click();
@@ -50,10 +53,12 @@ public class TS_1 {
 		textOfficer.click();
 		Select sel2 = new Select(textOfficer);
 		sel2.selectByVisibleText("senbosadmin");
+		Thread.sleep(2000);
 
 		//Selecting plate read
 		driver.findElement(By.xpath("//input[@id=\"maualEntryOcr\"]")).click();
 		driver.findElement(By.xpath("//input[@name=\"ocr\"]")).sendKeys("KA01");
+		Thread.sleep(2000);
 
 		//Selecting Plate registration state
 		driver.findElement(By.xpath("//input[@value=\"stateSelection\"]")).click();
@@ -61,12 +66,14 @@ public class TS_1 {
 		textState.click();
 		Select sel4= new Select(textState);
 		sel4.selectByVisibleText("QLD");
+		Thread.sleep(2000);
 
 		//Select Accept radio button
 		driver.findElement(By.xpath("//input[@value='passRemarksId']")).click();
 		driver.findElement(By.xpath("//input[@name=\"passedRemarksToSelect\"]")).click();
 		driver.findElement(By.xpath("//input[@placeholder=\"Acceptance Remarks\"]")).sendKeys("Alert Accepted");
 		driver.findElement(By.xpath("//a[@id=\"save\"]")).click();
+		Thread.sleep(2000);
 
 
 
