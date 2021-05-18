@@ -10,16 +10,15 @@ import com.sensen.commomutils.BaseClass;
 
 public class LandingPage extends BaseClass{
 	
-	public LandingPage(WebDriver driver)
-	{
+	public LandingPage(WebDriver driver){
+		this.driver =  driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(xpath="//a[text()='Infringements']")
 	private WebElement Infringement;
 	
-	public void clickOnInfringements()
-	{
+	public void clickOnInfringements(){
 		Infringement.click();
 	}
 	

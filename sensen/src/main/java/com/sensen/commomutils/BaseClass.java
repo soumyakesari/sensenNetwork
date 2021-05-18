@@ -11,8 +11,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	
-	WebDriverUtils wb =new WebDriverUtils();
-	WebDriver driver = new ChromeDriver();
+	public WebDriverUtils wb =new WebDriverUtils();
+	public WebDriver driver = new ChromeDriver();
 	
 	@BeforeClass
 	public void Open()
@@ -25,10 +25,8 @@ public class BaseClass {
 	}
 	
 	@AfterClass
-	
-	public void Close()
-	{
-			driver.close();
+	public void Close(){
+		driver.close();
 	}
 
 }

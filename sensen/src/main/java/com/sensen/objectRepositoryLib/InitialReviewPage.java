@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.sensen.commomutils.BaseClass;
 import com.sensen.commomutils.WebDriverUtils;
@@ -14,12 +15,12 @@ public class InitialReviewPage extends BaseClass {
 
 	WebDriverUtils wb =new WebDriverUtils();
 
-	public InitialReviewPage(WebDriver driver)
-	{
+	public InitialReviewPage(WebDriver driver){
+		this.driver =  driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath="//table/tbody/tr[1]/td[1]/a[@class=\\\"text-bold\\\"]")
+	@FindBy(xpath="//table/tbody/tr[3]/td[1]/a[@class=\\\"text-bold\\\"]")
 	private WebElement AlertId;
 
 	@FindBy(xpath="//input[@value=\\\"dropdownOffenceLocation\\\"]")
@@ -45,17 +46,27 @@ public class InitialReviewPage extends BaseClass {
 
 	@FindBy(xpath="//select[@id=\\\"stateSelection\\\"]")
 	private WebElement PlateStateRegStatetDropdownTxtField;
-	
+
 	@FindBy(xpath="//input[@value='passRemarksId']")
 	private WebElement PassRadioBtn;
-	
+
 	@FindBy(xpath="//input[@name=\\\"passedRemarksToSelect\\\"]")
 	private WebElement PassRemarkTextField;
-	
+
 	@FindBy(xpath="//input[@placeholder=\\\"Acceptance Remarks\\\"]")
 	private WebElement AcceptanceRemarkTextField;
 	
+	@FindBy(xpath="//div[contains(text(), 'Operation Successful')]")
+	private WebElement SuccessfulMessage;
 	
+	@FindBy(xpath="//a[@href='logout.htm']//span")
+	private WebElement LogoutButton;
+			
+
+	public void clickOnAlertId()
+	{
+		AlertId.click();
+	}
 	public void selectLocation()
 	{
 		LocationDropdownBtn.click();
@@ -82,16 +93,31 @@ public class InitialReviewPage extends BaseClass {
 		PlateStateRegStatetDropdownTxtField.click();
 		wb.select(PlateStateRegStatetDropdownTxtField, "QLD");
 	}
-	
-	public void ClickOnAccept()
+
+	public void clickOnAccept()
 	{
 		PassRadioBtn.click();
 		PassRemarkTextField.click();
 		AcceptanceRemarkTextField.sendKeys("Alert Accepted");
 	}
+
+	public void ValidateScccessfulMessage()
+	{
+		String message = SuccessfulMessage.getText();
+		String arr[] = message.split(":", 2);
+
+		String updateMsg = arr[0];   
+
+		Assert.assertEquals(updateMsg,"Operation Successful ","Initial Review not successful");
+
+	}
+	 public void clickOnLogout() throws InterruptedException
+	 {
+		 Thread.sleep(3000);
+		 LogoutButton.click();
+	 }
+
 	
-
-
 
 
 

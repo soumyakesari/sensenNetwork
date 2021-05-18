@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Random;
 /**
  *   This class contains java specific libraries , which include getSystemData , getRanNumber etc
- * @author Soumya
+ * 
  *
  */
 

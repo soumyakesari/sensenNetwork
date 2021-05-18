@@ -9,8 +9,8 @@ import com.sensen.commomutils.BaseClass;
 
 public class LoginPage extends BaseClass {
 
-
-	public LoginPage(WebDriver driver){                                              
+	public LoginPage(WebDriver driver){   
+		this.driver =  driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -38,9 +38,9 @@ public class LoginPage extends BaseClass {
 
 
 	public void loginToApp(String username , String password) { 
+		
 		userNameTB.sendKeys(username);
 		passwordTB.sendKeys(password);
 		loginButton.click();
 	}
-
 }

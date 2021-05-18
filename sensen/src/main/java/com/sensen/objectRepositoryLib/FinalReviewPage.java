@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.sensen.commomutils.BaseClass;
 import com.sensen.commomutils.WebDriverUtils;
@@ -14,8 +15,8 @@ public class FinalReviewPage extends BaseClass {
 
 	WebDriverUtils wb =new WebDriverUtils();
 
-	public FinalReviewPage(WebDriver driver)
-	{
+	public FinalReviewPage(WebDriver driver){
+		this.driver =  driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -67,6 +68,15 @@ public class FinalReviewPage extends BaseClass {
 	@FindBy(xpath="//button[@id=\\\"reject\\\"]")
 	private WebElement rejectButton;
 	
+	@FindBy(xpath="//div[@id='opStatusMessage']")
+	private WebElement UpdateMsg;
+	
+	@FindBy(xpath="//span[@class='sn-alert-status']")
+	private WebElement AlertStatus;
+	
+	@FindBy (xpath="//a[@href='logout.htm']//span")
+	private WebElement LogoutButton;
+	
 
 	public void viewPage()
 	{
@@ -106,6 +116,22 @@ public class FinalReviewPage extends BaseClass {
 		ticketREmarksTextField.sendKeys("Alert Rejected");
 		rejectButton.click();
 	}
+	
+	public void ValidateFinalMessage() throws InterruptedException
+	{
+		String updateMessage = UpdateMsg.getText();
+		 Assert.assertEquals(updateMessage,"Operation Successful","Final Review Not successful");
+		 
+		 String alertStatus = AlertStatus.getText();
+		 Assert.assertEquals(alertStatus,"Infringement Declined","Final Review Alert Status Update Not successful");
+		 
+		 Thread.sleep(3000);
+		 LogoutButton.click();
+		 Thread.sleep(3000);
+	}
+
+	
+		 
 
 
 	

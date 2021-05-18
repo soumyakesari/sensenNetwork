@@ -10,7 +10,8 @@ import com.sensen.commomutils.BaseClass;
 public class InfringementsPage extends BaseClass
 {
 	
-	public InfringementsPage(WebDriver driver){                                              
+	public InfringementsPage(WebDriver driver){ 
+		this.driver =  driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -30,7 +31,4 @@ public class InfringementsPage extends BaseClass
 		FinalReviewMenu.click();
 		
 	}
-	
-	
-
 }
