@@ -12,7 +12,7 @@ import com.sensen.objectRepositoryLib.LandingPage;
 import com.sensen.objectRepositoryLib.LoginPage;
 
 public class TS_Initial extends BaseClass implements ApplicationConstants{
-
+	
 	@Test
 	public void initialReviewSuccessTest() throws Throwable {
 		
@@ -33,7 +33,7 @@ public class TS_Initial extends BaseClass implements ApplicationConstants{
 		//click on Initial Review submenu
 		infringe.clickOnInitialReview();
 
-		Thread.sleep(3000);
+		Thread.sleep(3000);                            // Added for the purpose of demo, to be removed later
 		//click on AlertId
 		initReview.clickOnAlertId();
 	
@@ -52,10 +52,11 @@ public class TS_Initial extends BaseClass implements ApplicationConstants{
 		//Select Accept Radio button
 		initReview.clickOnAccept();
 		
-		Thread.sleep(3000);
+		Thread.sleep(3000);                          // Added for the purpose of demo, to be removed later
 		//Validating successful message
-		initReview.ValidateSuccessfulMessage();
+		initReview.validateSuccessfulMessage();
 		
+		Thread.sleep(3000);                           // Added for the purpose of demo, to be removed later
 		//Logout from the Application
 		initReview.clickOnLogout();
 		

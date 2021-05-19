@@ -1,5 +1,6 @@
 package sensen;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import com.sensen.commomutils.ApplicationConstants;
@@ -11,6 +12,7 @@ import com.sensen.objectRepositoryLib.LandingPage;
 import com.sensen.objectRepositoryLib.LoginPage;
 
 public class TS_Final extends BaseClass implements ApplicationConstants{
+	
 
 	@Test
 	public void FinalReviewSuccessTest() throws Throwable {
@@ -18,7 +20,7 @@ public class TS_Final extends BaseClass implements ApplicationConstants{
 		LoginPage login= new LoginPage(driver);
 		InfringementsPage infringe= new InfringementsPage(driver);
 		LandingPage landing = new LandingPage(driver);
-		FinalReviewPage Final = new FinalReviewPage(driver);
+		FinalReviewPage finalPg = new FinalReviewPage(driver);
 
 		//Navigate to application
 		login.loginToApp(ApplicationConstants.userName,ApplicationConstants.password);
@@ -30,25 +32,25 @@ public class TS_Final extends BaseClass implements ApplicationConstants{
 		infringe.clickOnFinalReview();
 
 		//Click on Alert Id
-		Final.viewPage();
+		finalPg.viewPage();
 
 		//Click on Infringement info page
-		Final.infringementInfoPage();
+		finalPg.infringementInfoPage();
 
 		//Enter OwnerInfo
-		Final.OwnerInfo();
+		finalPg.ownerInfo();
 
 		//Enter Address info
-		Final.AddressInfo();
+		finalPg.addressInfo();
 
 		//Click on Reject button
-		Final.clickOnRejectButton();
+		finalPg.clickOnRejectButton();
 
 		//Validation
-		Final.ValidateFinalMessage();
+		finalPg.validateFinalMessage();
 
 		//Click on logout
-		Final.Close();
+		close();
 
 
 	}

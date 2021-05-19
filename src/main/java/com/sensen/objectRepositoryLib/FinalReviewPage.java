@@ -11,9 +11,9 @@ import org.testng.Assert;
 import com.sensen.commomutils.BaseClass;
 import com.sensen.commomutils.WebDriverUtils;
 
-public class FinalReviewPage extends BaseClass {
+public class FinalReviewPage {
 
-	
+	WebDriver driver;
 	WebDriverUtils wb =new WebDriverUtils();
 
 	public FinalReviewPage(WebDriver driver){
@@ -93,13 +93,13 @@ public class FinalReviewPage extends BaseClass {
 		dateCalender.click();
 	}
 
-	public void OwnerInfo()
+	public void ownerInfo()
 	{
 		firstName.sendKeys("Ram");
 		lastName.sendKeys("krishna");
 	}
 
-	public void AddressInfo()
+	public void addressInfo()
 	{
 		streetNameTextField.sendKeys("Basavanagudi");
 		suburbsnTextField.sendKeys("Bangalore");
@@ -119,7 +119,7 @@ public class FinalReviewPage extends BaseClass {
 		driver.switchTo().alert().accept();
 	}
 	
-	public void ValidateFinalMessage() throws InterruptedException
+	public void validateFinalMessage() throws InterruptedException
 	{
 		String updateMessage = UpdateMsg.getText();
 		 Assert.assertEquals(updateMessage,"Operation Successful","Final Review Not successful");
@@ -127,9 +127,9 @@ public class FinalReviewPage extends BaseClass {
 		 String alertStatus = AlertStatus.getText();
 		 Assert.assertEquals(alertStatus,"Infringement Declined","Final Review Alert Status Update Not successful");
 		 
-		 Thread.sleep(3000);
+		 Thread.sleep(3000);                        // Added for the purpose of demo, to be removed later
 		 LogoutButton.click();
-		 Thread.sleep(3000);
+		 Thread.sleep(3000);                        // Added for the purpose of demo, to be removed later
 	}
 
 	

@@ -14,19 +14,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 
 
-	public WebDriver driver =  new ChromeDriver();
-
+	public WebDriver driver;
 	@BeforeClass
-	public void Open()
+	public void open()
 	{
+		
 		WebDriverManager.chromedriver().setup();
+		driver =  new ChromeDriver();
+
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(ApplicationConstants.appUrl);
 	}
 
 	@AfterClass
-	public void Close(){
+	public void close(){
+
 		driver.close();
 	}
 

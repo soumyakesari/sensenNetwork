@@ -31,14 +31,14 @@ public class TS_2 {
 
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Infringements']")));
-		Thread.sleep(2000);
+		Thread.sleep(2000);                       // Added for the purpose of demo, to be removed later
 		driver.findElement(By.xpath("//a[text()='Infringements']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);                       // Added for the purpose of demo, to be removed later
 		driver.findElement(By.xpath("//a[text()='Final Review']")).click();
 		driver.findElement(By.xpath("//table/tbody/tr[1]/td[1]/a[@class=\"text-bold sn-ticket-id\"]")).click();
 		
 		//View Page
-		Thread.sleep(2000);
+		Thread.sleep(2000);                      // Added for the purpose of demo, to be removed later
 		 WebElement viewDropdown = driver.findElement(By.xpath("//select[@id=\"reasonCodesSelect\"]"));
 		 viewDropdown.click();
 		 Select sel = new Select(viewDropdown);
@@ -46,12 +46,12 @@ public class TS_2 {
 		 driver.findElement(By.xpath("//button[@id=\"snProceedWithReasonCode\"]")).click();
 		 
 		 //Infringment info page
-		 Thread.sleep(2000);
+		 Thread.sleep(2000);                    // Added for the purpose of demo, to be removed later
 		 driver.findElement(By.xpath("//input[@id=\"registerationNumber\"]")).sendKeys("100023");
 		 driver.findElement(By.xpath("//input[@name='issueDateSplit']")).click();
 		 
 		 //OwnerInfo
-		 Thread.sleep(2000);
+		 Thread.sleep(2000);                   // Added for the purpose of demo, to be removed later
 		 driver.findElement(By.xpath("//input[@id=\"firstName\"]")).sendKeys("Jones");
 		 driver.findElement(By.xpath("//input[@id=\"lastName\"]")).sendKeys("kones");
 		 
@@ -64,13 +64,13 @@ public class TS_2 {
 		 driver.findElement(By.xpath("//input[@id=\"countryCode\"]")).sendKeys("AUS");
 		
 		 // click on reject button
-		 Thread.sleep(1000);
+		 Thread.sleep(1000);                // Added for the purpose of demo, to be removed later
 		 driver.findElement(By.xpath("//input[@value=\"rejectRemarksId\"]")).click();
 		 driver.findElement(By.xpath("//input[@id=\"manualEntryRejectionRemarks\"]")).click();
 		 driver.findElement(By.xpath("//input[@id=\"ticketRemarks\"]")).sendKeys("Rejected");
 		 
 		 //click on Reject button
-		 Thread.sleep(1000);
+		 Thread.sleep(1000);                // Added for the purpose of demo, to be removed later
 		 driver.findElement(By.xpath("//button[@id=\"reject\"]")).click();
 		 driver.switchTo().alert().accept();
 		 
@@ -81,9 +81,9 @@ public class TS_2 {
 		 String alertStatus = driver.findElement(By.xpath("//span[@class='sn-alert-status']")).getText();
 		 Assert.assertEquals(alertStatus,"Infringement Declined","Final Review Alert Status Update Not successful");
 		
-		Thread.sleep(3000);
+		Thread.sleep(3000);                 // Added for the purpose of demo, to be removed later
 		driver.findElement(By.xpath("//a[@href='logout.htm']//span")).click();
-		Thread.sleep(3000);
+		Thread.sleep(3000);                 // Added for the purpose of demo, to be removed later
 		driver.close();
 
 

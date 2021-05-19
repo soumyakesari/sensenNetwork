@@ -11,9 +11,9 @@ import org.testng.Assert;
 import com.sensen.commomutils.BaseClass;
 import com.sensen.commomutils.WebDriverUtils;
 
-public class InitialReviewPage extends BaseClass {
+public class InitialReviewPage {
 
-
+	WebDriver driver;
 	WebDriverUtils wb =new WebDriverUtils();
 
 	public InitialReviewPage(WebDriver driver){
@@ -21,7 +21,7 @@ public class InitialReviewPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath="//table/tbody/tr[2]/td[1]/a[@class=\"text-bold\"]")
+	@FindBy(xpath="//table/tbody/tr[4]/td[1]/a[@class=\"text-bold\"]")
 	private WebElement AlertId;
 
 	@FindBy(xpath="//input[@value=\"dropdownOffenceLocation\"]")
@@ -56,6 +56,9 @@ public class InitialReviewPage extends BaseClass {
 
 	@FindBy(xpath="//input[@placeholder=\"Acceptance Remarks\"]")
 	private WebElement AcceptanceRemarkTextField;
+	
+	@FindBy(id="save")
+	private WebElement AcceptButton;
 
 	@FindBy(xpath="//div[@id=\"opStatusMessage\"]")
 	private WebElement SuccessfulMessage;
@@ -100,16 +103,17 @@ public class InitialReviewPage extends BaseClass {
 		PassRadioBtn.click();
 		PassRemarkTextField.click();
 		AcceptanceRemarkTextField.sendKeys("Alert Accepted");
+		AcceptButton.click();
 	}
 
-	public void ValidateSuccessfulMessage()
+	public void validateSuccessfulMessage()
 	{
 		String message = SuccessfulMessage.getText();
 		Assert.assertNotNull(message, "Initial Review not successful");
 	}
 	public void clickOnLogout() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(3000);                                       // Added for the purpose of demo, to be removed later
 		LogoutButton.click();
 	}
 

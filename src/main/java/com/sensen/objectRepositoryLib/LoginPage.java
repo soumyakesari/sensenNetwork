@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.sensen.commomutils.BaseClass;
 
-public class LoginPage extends BaseClass {
+public class LoginPage {
 
-	
+	WebDriver driver;
 
 	public LoginPage(WebDriver driver){   
 		this.driver =  driver;
