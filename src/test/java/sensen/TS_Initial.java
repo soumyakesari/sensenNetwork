@@ -15,12 +15,15 @@ public class TS_Initial extends BaseClass implements ApplicationConstants{
 
 	@Test
 	public void initialReviewSuccessTest() throws Throwable {
+		
+		
 
 		InitialReviewPage initReview = new InitialReviewPage(driver);
 		LoginPage login= new LoginPage(driver);
 		InfringementsPage infringe= new InfringementsPage(driver);
 		LandingPage lp= new LandingPage(driver);
 
+		
 		//Navigate to application
 		login.loginToApp(ApplicationConstants.userName,ApplicationConstants.password);
 

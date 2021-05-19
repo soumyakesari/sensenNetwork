@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-19T13:25:53 IST" name="Default suite" finished-at="2021-05-19T13:26:13 IST" duration-ms="19374">
+  <suite started-at="2021-05-19T14:04:52 IST" name="Default suite" finished-at="2021-05-19T14:05:58 IST" duration-ms="65796">
     <groups>
     </groups>
-    <test started-at="2021-05-19T13:25:53 IST" name="Default test" finished-at="2021-05-19T13:26:13 IST" duration-ms="19374">
+    <test started-at="2021-05-19T14:04:52 IST" name="Default test" finished-at="2021-05-19T14:05:58 IST" duration-ms="65796">
       <class name="sensen.TS_Initial">
-        <test-method is-config="true" signature="Open()[pri:0, instance:sensen.TS_Initial@67c2e933]" started-at="2021-05-19T13:25:53 IST" name="Open" finished-at="2021-05-19T13:26:05 IST" duration-ms="11907" status="PASS">
+        <test-method is-config="true" signature="Open()[pri:0, instance:sensen.TS_Initial@67c2e933]" started-at="2021-05-19T14:04:52 IST" name="Open" finished-at="2021-05-19T14:05:01 IST" duration-ms="8982" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Open -->
-        <test-method signature="initialReviewSuccessTest()[pri:0, instance:sensen.TS_Initial@67c2e933]" started-at="2021-05-19T13:26:05 IST" name="initialReviewSuccessTest" finished-at="2021-05-19T13:26:13 IST" duration-ms="7218" status="PASS">
+        <test-method signature="initialReviewSuccessTest()[pri:0, instance:sensen.TS_Initial@67c2e933]" started-at="2021-05-19T14:05:01 IST" name="initialReviewSuccessTest" finished-at="2021-05-19T14:05:58 IST" duration-ms="56645" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialReviewSuccessTest -->
-        <test-method is-config="true" signature="Close()[pri:0, instance:sensen.TS_Initial@67c2e933]" started-at="2021-05-19T13:26:13 IST" name="Close" finished-at="2021-05-19T13:26:13 IST" duration-ms="174" status="PASS">
+        <test-method is-config="true" signature="Close()[pri:0, instance:sensen.TS_Initial@67c2e933]" started-at="2021-05-19T14:05:58 IST" name="Close" finished-at="2021-05-19T14:05:58 IST" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close -->
