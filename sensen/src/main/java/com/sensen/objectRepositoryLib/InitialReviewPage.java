@@ -20,40 +20,40 @@ public class InitialReviewPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath="//table/tbody/tr[3]/td[1]/a[@class=\\\"text-bold\\\"]")
+	@FindBy(xpath="//table/tbody/tr[3]/td[1]/a[@class=\"text-bold\"]")
 	private WebElement AlertId;
 
-	@FindBy(xpath="//input[@value=\\\"dropdownOffenceLocation\\\"]")
+	@FindBy(xpath="//input[@value=\"dropdownOffenceLocation\"]")
 	private WebElement LocationDropdownBtn;
 
-	@FindBy(xpath="//select[@id=\\\"offenceLocationDrop\\\"]")
+	@FindBy(xpath="//select[@id=\"offenceLocationDrop\"]")
 	private WebElement LocationSelectionTxtField;
 
-	@FindBy(xpath="//input[@value=\\\"offenceLocationDropDiv\\\"]")
+	@FindBy(xpath="//input[@value=\"offenceLocationDropDiv\"]")
 	private WebElement OfficerDropdownBtn;
 
-	@FindBy(xpath="//select[@name=\\\"officerDropDownString\\\"]")
+	@FindBy(xpath="//select[@name=\"officerDropDownString\"]")
 	private WebElement OfficerDropdownTxtField;
 
-	@FindBy(xpath="//input[@id=\\\"maualEntryOcr\\\"]")
+	@FindBy(xpath="//input[@id=\"maualEntryOcr\"]")
 	private WebElement PlateReadDropdownBtn;
 
-	@FindBy(xpath="//input[@name=\\\"ocr\\\"]")
+	@FindBy(xpath="//input[@name=\"ocr\"]")
 	private WebElement PlateReadDropdownTxtField;
 
-	@FindBy(xpath="//input[@value=\\\"stateSelection\\\"]")
+	@FindBy(xpath="//input[@value=\"stateSelection\"]")
 	private WebElement PlateStateRegStatetDropdownBtn;
 
-	@FindBy(xpath="//select[@id=\\\"stateSelection\\\"]")
+	@FindBy(xpath="//select[@id=\"stateSelection\"]")
 	private WebElement PlateStateRegStatetDropdownTxtField;
 
 	@FindBy(xpath="//input[@value='passRemarksId']")
 	private WebElement PassRadioBtn;
 
-	@FindBy(xpath="//input[@name=\\\"passedRemarksToSelect\\\"]")
+	@FindBy(xpath="//input[@name=\"passedRemarksToSelect\"]")
 	private WebElement PassRemarkTextField;
 
-	@FindBy(xpath="//input[@placeholder=\\\"Acceptance Remarks\\\"]")
+	@FindBy(xpath="//input[@placeholder=\"Acceptance Remarks\"]")
 	private WebElement AcceptanceRemarkTextField;
 	
 	@FindBy(xpath="//div[contains(text(), 'Operation Successful')]")

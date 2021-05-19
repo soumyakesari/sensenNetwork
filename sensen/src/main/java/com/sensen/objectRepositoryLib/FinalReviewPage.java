@@ -20,52 +20,52 @@ public class FinalReviewPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath="//table/tbody/tr[1]/td[1]/a[@class=\\\"text-bold sn-ticket-id\\\"]")
+	@FindBy(xpath="//table/tbody/tr[1]/td[1]/a[@class=\"text-bold sn-ticket-id\"]")
 	private WebElement AlertId;
 
-	@FindBy(xpath="//select[@id=\\\"reasonCodesSelect\\\"]")
+	@FindBy(xpath="//select[@id=\"reasonCodesSelect\"]")
 	private WebElement viewDropdown;
 
-	@FindBy(xpath="//button[@id=\\\"snProceedWithReasonCode\\\"]")
+	@FindBy(xpath="//button[@id=\"snProceedWithReasonCode\"]")
 	private WebElement proceedButton;
 
-	@FindBy(xpath="//input[@id=\\\"registerationNumber\\\"]")
+	@FindBy(xpath="//input[@id=\"registerationNumber\"]")
 	private WebElement registraionNumber;
 
 	@FindBy(xpath="//input[@name='issueDateSplit']")
 	private WebElement dateCalender;
 
-	@FindBy(xpath="//input[@id=\\\"firstName\\\"]")
+	@FindBy(xpath="//input[@id=\"firstName\"]")
 	private WebElement firstName;
 
-	@FindBy(xpath="//input[@id=\\\"lastName\\\"]")
+	@FindBy(xpath="//input[@id=\"lastName\"]")
 	private WebElement lastName;
 	
 	@FindBy(xpath="//input[@name=\"streetName\"]")
 	private WebElement streetNameTextField;
 	
-	@FindBy(xpath="//input[@id=\\\"suburb\\\"]")
+	@FindBy(xpath="//input[@id=\"suburb\"]")
 	private WebElement suburbsnTextField;
 	
-	@FindBy(xpath="//input[@id=\\\"postcode\\\"]")
+	@FindBy(xpath="//input[@id=\"postcode\"]")
 	private WebElement postcodeTextField;
 	
-	@FindBy(xpath="//input[@id=\\\"state\\\"]")
+	@FindBy(xpath="//input[@id=\"state\"]")
 	private WebElement stateTextField;
 	
-	@FindBy(xpath="//input[@id=\\\"countryCode\\\"]")
+	@FindBy(xpath="//input[@id=\"countryCode\"]")
 	private WebElement countryTextField;
 	
-	@FindBy(xpath="//input[@value=\\\"rejectRemarksId\\\"]")
+	@FindBy(xpath="//input[@value=\"rejectRemarksId\"]")
 	private WebElement rejectRmarkTextField;
 	
-	@FindBy(xpath="//input[@id=\\\"manualEntryRejectionRemarks\\\"]")
+	@FindBy(xpath="//input[@id=\"manualEntryRejectionRemarks\"]")
 	private WebElement manualEntryRejectionREmark;
 	
-	@FindBy(xpath="//input[@id=\\\"ticketRemarks\\\"]")
+	@FindBy(xpath="//input[@id=\"ticketRemarks\"]")
 	private WebElement ticketREmarksTextField;
 	
-	@FindBy(xpath="//button[@id=\\\"reject\\\"]")
+	@FindBy(xpath="//button[@id=\"reject\"]")
 	private WebElement rejectButton;
 	
 	@FindBy(xpath="//div[@id='opStatusMessage']")
