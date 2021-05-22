@@ -3,16 +3,11 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="sensen.TS_Initial">
-        <methods>
-          <include name="initialReviewSuccessTest"/>
-          <include name="Close"/>
-        </methods>
-      </class> <!-- sensen.TS_Initial -->
       <class name="sensen.TS_Final">
         <methods>
+          <include name="open"/>
+          <include name="close"/>
           <include name="FinalReviewSuccessTest"/>
-          <include name="Close"/>
         </methods>
       </class> <!-- sensen.TS_Final -->
     </classes>
