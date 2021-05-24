@@ -1,4 +1,4 @@
-package com.sensen.commomutils;
+package commonutils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * This class contains WebDriver specific libaraies , which used to handle Dropdowns ,Popups, Wait statements.
- * 
+ * @author Soumya
  *
  */
 
@@ -70,42 +70,9 @@ public class WebDriverUtils {
 	public void cancelAllert(WebDriver driver) {
 		driver.switchTo().alert().dismiss();
 	}
+}
 
-	/**
-	 * 
-	 */
-	public void captureScreenshot()
-	{
-
-		EventFiringWebDriver eDriver = new EventFiringWebDriver(BaseClass.driver);
-		File srcFile = eDriver.getScreenshotAs(OutputType.FILE);
-		File dstFile = new File("./screenshots/");
-
-		try {
-			FileUtils.copyFile(srcFile, dstFile);
-		} catch (IOException e) {
-
-		}
-
-	}
-
-	//public String getExcelData(String sheetName , int rowNum , int colNum) throws Throwable {
-		//FileInputStream fis = new FileInputStream(ApplicationConstants.excelFilePath);
-		//Workbook wb = WorkbookFactory.create(fis);
-		//Sheet sh = wb.getSheet(sheetName);
-		//Row row = sh.getRow(rowNum);
-		//wb.close();
-		//return row.getCell(colNum).getStringCellValue();
-	}
-
-
-
-
-
-
-
-
-
+	
 
 
 

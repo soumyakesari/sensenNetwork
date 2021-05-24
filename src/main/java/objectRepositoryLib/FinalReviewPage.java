@@ -1,4 +1,4 @@
-package com.sensen.objectRepositoryLib;
+package objectRepositoryLib;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,13 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.sensen.commomutils.BaseClass;
-import com.sensen.commomutils.WebDriverUtils;
+import commonutils.BaseClass;
+import commonutils.ExcelUtility;
+import commonutils.WebDriverUtils;
 
 public class FinalReviewPage {
 
 	WebDriver driver;
 	WebDriverUtils wb =new WebDriverUtils();
+	public ExcelUtility elib = new ExcelUtility();
 
 	public FinalReviewPage(WebDriver driver){
 		this.driver =  driver;
@@ -41,43 +43,43 @@ public class FinalReviewPage {
 
 	@FindBy(xpath="//input[@id=\"lastName\"]")
 	private WebElement lastName;
-	
+
 	@FindBy(xpath="//input[@name=\"streetName\"]")
 	private WebElement streetNameTextField;
-	
+
 	@FindBy(xpath="//input[@id=\"suburb\"]")
 	private WebElement suburbsnTextField;
-	
+
 	@FindBy(xpath="//input[@id=\"postcode\"]")
 	private WebElement postcodeTextField;
-	
+
 	@FindBy(xpath="//input[@id=\"state\"]")
 	private WebElement stateTextField;
-	
+
 	@FindBy(xpath="//input[@id=\"countryCode\"]")
 	private WebElement countryTextField;
-	
+
 	@FindBy(xpath="//input[@value=\"rejectRemarksId\"]")
 	private WebElement rejectRmarkTextField;
-	
+
 	@FindBy(xpath="//input[@id=\"manualEntryRejectionRemarks\"]")
 	private WebElement manualEntryRejectionREmark;
-	
+
 	@FindBy(xpath="//input[@id=\"ticketRemarks\"]")
 	private WebElement ticketREmarksTextField;
-	
+
 	@FindBy(xpath="//button[@id=\"reject\"]")
 	private WebElement rejectButton;
-	
+
 	@FindBy(xpath="//div[@id='opStatusMessage']")
 	private WebElement UpdateMsg;
-	
+
 	@FindBy(xpath="//span[@class='sn-alert-status']")
 	private WebElement AlertStatus;
-	
+
 	@FindBy (xpath="//a[@href='logout.htm']//span")
 	private WebElement LogoutButton;
-	
+
 
 	public void viewPage()
 	{
@@ -89,7 +91,6 @@ public class FinalReviewPage {
 
 	public void infringementInfoPage()
 	{
-		registraionNumber.sendKeys("1003100");
 		dateCalender.click();
 	}
 
@@ -107,9 +108,9 @@ public class FinalReviewPage {
 		postcodeTextField.sendKeys("584101");
 		stateTextField.sendKeys("QLD");
 		countryTextField.sendKeys("AUS");
-		
+
 	}
-	
+
 	public void clickOnRejectButton()
 	{
 		rejectRmarkTextField.click();
@@ -118,26 +119,26 @@ public class FinalReviewPage {
 		rejectButton.click();
 		driver.switchTo().alert().accept();
 	}
-	
+
 	public void validateFinalMessage() throws InterruptedException
 	{
 		String updateMessage = UpdateMsg.getText();
-		 Assert.assertEquals(updateMessage,"Operation Successful","Final Review Not successful");
-		 
-		 String alertStatus = AlertStatus.getText();
-		 Assert.assertEquals(alertStatus,"Infringement Declined","Final Review Alert Status Update Not successful");
-		 
-		 Thread.sleep(3000);                        // Added for the purpose of demo, to be removed later
-		 LogoutButton.click();
-		 Thread.sleep(3000);                        // Added for the purpose of demo, to be removed later
+		Assert.assertEquals(updateMessage,"Operation Successful","Final Review Not successful");
+
+		String alertStatus = AlertStatus.getText();
+		Assert.assertEquals(alertStatus,"Infringement Declined","Final Review Alert Status Update Not successful");
+
+		Thread.sleep(3000);                        // Added for the purpose of demo, to be removed later
+		LogoutButton.click();
+		Thread.sleep(3000);                        // Added for the purpose of demo, to be removed later
 	}
 
-	
-		 
 
 
-	
-	 
+
+
+
+
 
 
 

@@ -12,8 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.sensen.commomutils.ApplicationConstants;
-
+import commonutils.ApplicationConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TS_1 implements ApplicationConstants{

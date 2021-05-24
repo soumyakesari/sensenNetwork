@@ -1,4 +1,4 @@
-package com.sensen.commomutils;
+package commonutils;
 
 import java.util.concurrent.TimeUnit;
 

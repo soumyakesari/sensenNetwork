@@ -1,4 +1,4 @@
-package com.sensen.objectRepositoryLib;
+package objectRepositoryLib;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,13 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.sensen.commomutils.BaseClass;
-import com.sensen.commomutils.WebDriverUtils;
+import commonutils.BaseClass;
+import commonutils.ExcelUtility;
+import commonutils.WebDriverUtils;
 
 public class InitialReviewPage {
 
 	WebDriver driver;
 	WebDriverUtils wb =new WebDriverUtils();
+	public ExcelUtility elib = new ExcelUtility();
 
 	public InitialReviewPage(WebDriver driver){
 		this.driver =  driver;
@@ -71,38 +73,43 @@ public class InitialReviewPage {
 	{
 		AlertId.click();
 	}
-	public void selectLocation()
+	public void selectLocation() throws Throwable
 	{
 		LocationDropdownBtn.click();
 		LocationSelectionTxtField.click();
-		wb.select(LocationSelectionTxtField, "BALLIDU CLOSE,ELANORA");
+		String locationName= elib.getExcelData("InitialReview", 3, 0);
+		wb.select(LocationSelectionTxtField,locationName);
 	}
 
-	public void selectOfficer()
+	public void selectOfficer() throws Throwable
 	{
 		OfficerDropdownBtn.click();
 		OfficerDropdownTxtField.click();
-		wb.select(OfficerDropdownTxtField, "senbosadmin");
+		String officerName= elib.getExcelData("InitialReview", 3, 1);
+		wb.select(OfficerDropdownTxtField, officerName);
 	}
 
-	public void selectPlateRead()
+	public void selectPlateRead() throws Throwable
 	{
 		PlateReadDropdownBtn.click();
-		PlateReadDropdownTxtField.sendKeys("KA01");
+		String plateRead= elib.getExcelData("InitialReview", 3, 2);
+		PlateReadDropdownTxtField.sendKeys(plateRead);
 	}
 
-	public void selectPlateRegistrationState()
+	public void selectPlateRegistrationState() throws Throwable
 	{
 		PlateStateRegStatetDropdownBtn.click();
 		PlateStateRegStatetDropdownTxtField.click();
-		wb.select(PlateStateRegStatetDropdownTxtField, "QLD");
+		String plateRegistrationState= elib.getExcelData("InitialReview", 3, 3);
+		wb.select(PlateStateRegStatetDropdownTxtField, plateRegistrationState);
 	}
 
-	public void clickOnAccept()
+	public void clickOnAccept() throws Throwable
 	{
 		PassRadioBtn.click();
 		PassRemarkTextField.click();
-		AcceptanceRemarkTextField.sendKeys("Alert Accepted");
+		String AcceptRemark= elib.getExcelData("InitialReview", 3, 4);
+		AcceptanceRemarkTextField.sendKeys(AcceptRemark);
 		AcceptButton.click();
 	}
 

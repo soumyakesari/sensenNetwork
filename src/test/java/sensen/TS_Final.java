@@ -3,13 +3,13 @@ package sensen;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import com.sensen.commomutils.ApplicationConstants;
-import com.sensen.commomutils.BaseClass;
-import com.sensen.objectRepositoryLib.FinalReviewPage;
-import com.sensen.objectRepositoryLib.InfringementsPage;
-import com.sensen.objectRepositoryLib.InitialReviewPage;
-import com.sensen.objectRepositoryLib.LandingPage;
-import com.sensen.objectRepositoryLib.LoginPage;
+import commonutils.ApplicationConstants;
+import commonutils.BaseClass;
+import objectRepositoryLib.FinalReviewPage;
+import objectRepositoryLib.InfringementsPage;
+import objectRepositoryLib.InitialReviewPage;
+import objectRepositoryLib.LandingPage;
+import objectRepositoryLib.LoginPage;
 
 public class TS_Final extends BaseClass implements ApplicationConstants{
 	

@@ -1,11 +1,11 @@
-package com.sensen.objectRepositoryLib;
+package objectRepositoryLib;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.sensen.commomutils.BaseClass;
+import commonutils.BaseClass;
 
 public class LoginPage {
 

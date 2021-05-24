@@ -1,4 +1,4 @@
-package com.sensen.commomutils;
+package commonutils;
 
 import java.util.Date;
 import java.util.Random;
