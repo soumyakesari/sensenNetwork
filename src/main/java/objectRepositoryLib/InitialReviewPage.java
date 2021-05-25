@@ -58,7 +58,7 @@ public class InitialReviewPage {
 
 	@FindBy(xpath="//input[@placeholder=\"Acceptance Remarks\"]")
 	private WebElement AcceptanceRemarkTextField;
-	
+
 	@FindBy(id="save")
 	private WebElement AcceptButton;
 
@@ -77,22 +77,23 @@ public class InitialReviewPage {
 	{
 		LocationDropdownBtn.click();
 		LocationSelectionTxtField.click();
-		String locationName= elib.getExcelData("InitialReview", 3, 0);
-		wb.select(LocationSelectionTxtField,locationName);
+		String locationName= elib.getExcelData("InitialReview", 2, 0);
+		wb.selectByText(LocationSelectionTxtField,locationName);
 	}
 
 	public void selectOfficer() throws Throwable
 	{
 		OfficerDropdownBtn.click();
 		OfficerDropdownTxtField.click();
-		String officerName= elib.getExcelData("InitialReview", 3, 1);
-		wb.select(OfficerDropdownTxtField, officerName);
+		String officerName= elib.getExcelData("InitialReview", 2, 1);
+		wb.selectByText(OfficerDropdownTxtField, officerName);
+
 	}
 
 	public void selectPlateRead() throws Throwable
 	{
 		PlateReadDropdownBtn.click();
-		String plateRead= elib.getExcelData("InitialReview", 3, 2);
+		String plateRead= elib.getExcelData("InitialReview", 2, 2);
 		PlateReadDropdownTxtField.sendKeys(plateRead);
 	}
 
@@ -100,15 +101,15 @@ public class InitialReviewPage {
 	{
 		PlateStateRegStatetDropdownBtn.click();
 		PlateStateRegStatetDropdownTxtField.click();
-		String plateRegistrationState= elib.getExcelData("InitialReview", 3, 3);
-		wb.select(PlateStateRegStatetDropdownTxtField, plateRegistrationState);
+		String plateRegistrationState= elib.getExcelData("InitialReview", 2, 3);
+		wb.selectByText(PlateStateRegStatetDropdownTxtField, plateRegistrationState);
 	}
 
 	public void clickOnAccept() throws Throwable
 	{
 		PassRadioBtn.click();
 		PassRemarkTextField.click();
-		String AcceptRemark= elib.getExcelData("InitialReview", 3, 4);
+		String AcceptRemark= elib.getExcelData("InitialReview", 2, 4);
 		AcceptanceRemarkTextField.sendKeys(AcceptRemark);
 		AcceptButton.click();
 	}

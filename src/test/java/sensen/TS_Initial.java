@@ -23,7 +23,7 @@ public class TS_Initial extends BaseClass implements ApplicationConstants{
 		LoginPage login= new LoginPage(driver);
 		InfringementsPage infringe= new InfringementsPage(driver);
 		LandingPage lp= new LandingPage(driver);
-		ExcelUtility elib = new ExcelUtility();
+		
 
 		
 		//Navigate to application

@@ -26,19 +26,43 @@ public class WebDriverUtils {
 	 * @param element
 	 * @param data
 	 */
-	public void select(WebElement element , String data) {
+	public void selectByText(WebElement element , String data) {
 		Select sel = new Select(element);
 		sel.selectByVisibleText(data);
 	}
 
 	/**
+	 *  used to select the value from the dropDwon based on value
+	 * @param element
+	 * @param data
+	 */
+	public void selectByValue(WebElement element , String value) {
+		Select sel = new Select(element);
+		sel.selectByValue(value);
+	}
+	/**
 	 *  used to select the value from the dropDwon based on index
 	 * @param element
 	 * @param data
 	 */
-	public void select(WebElement element , int index) {
+	public void selectByIndex(WebElement element , int index) {
 		Select sel = new Select(element);
 		sel.selectByIndex(index);
+	}
+	
+	/**
+	 * Used to take screenshot
+	 * @param driver
+	 * @param methodName
+	 * @throws IOException
+	 */
+	public String takeScreenShot(String methodName) throws IOException {
+		EventFiringWebDriver event=new EventFiringWebDriver(BaseClass.driver);
+		File src=event.getScreenshotAs(OutputType.FILE);
+		String path=System.getProperty("user.dir")+"/screenshots/"+methodName+".png";
+		File dest=new File(path);
+		FileUtils.copyFile(src, dest);
+		return path;
 	}
 
 	/**

@@ -50,9 +50,6 @@ public class FinalReviewPage {
 	@FindBy(xpath="//input[@id=\"suburb\"]")
 	private WebElement suburbsnTextField;
 
-	@FindBy(xpath="//input[@id=\"postcode\"]")
-	private WebElement postcodeTextField;
-
 	@FindBy(xpath="//input[@id=\"state\"]")
 	private WebElement stateTextField;
 
@@ -81,11 +78,12 @@ public class FinalReviewPage {
 	private WebElement LogoutButton;
 
 
-	public void viewPage()
+	public void viewPage() throws Throwable
 	{
 		AlertId.click();
 		viewDropdown.click();
-		wb.select(viewDropdown, "Confirmation of Offender / Contact details");
+		String view = elib.getExcelData("FinalReview", 2, 0);
+		wb.selectByText(viewDropdown, view);
 		proceedButton.click();
 	}
 
@@ -94,28 +92,34 @@ public class FinalReviewPage {
 		dateCalender.click();
 	}
 
-	public void ownerInfo()
+	public void ownerInfo() throws Throwable
 	{
-		firstName.sendKeys("Ram");
-		lastName.sendKeys("krishna");
+		String FN= elib.getExcelData("FinalReview", 2, 1);
+		String LN= elib.getExcelData("FinalReview", 3, 1);
+		firstName.sendKeys(FN);
+		lastName.sendKeys(LN);
 	}
 
-	public void addressInfo()
+	public void addressInfo() throws Throwable
 	{
-		streetNameTextField.sendKeys("Basavanagudi");
-		suburbsnTextField.sendKeys("Bangalore");
-		postcodeTextField.clear();
-		postcodeTextField.sendKeys("584101");
-		stateTextField.sendKeys("QLD");
-		countryTextField.sendKeys("AUS");
+		String streetName = elib.getExcelData("FinalReview", 2, 2);
+		String suburban = elib.getExcelData("FinalReview", 3, 2);
+		String state = elib.getExcelData("FinalReview", 5, 2);
+		String country = elib.getExcelData("FinalReview", 6, 2);
+
+		streetNameTextField.sendKeys(streetName);
+		suburbsnTextField.sendKeys(suburban);
+		stateTextField.sendKeys(state);
+		countryTextField.sendKeys(country);
 
 	}
 
-	public void clickOnRejectButton()
+	public void clickOnRejectButton() throws Throwable
 	{
 		rejectRmarkTextField.click();
 		manualEntryRejectionREmark.click();
-		ticketREmarksTextField.sendKeys("Alert Rejected");
+		String alertRemark = elib.getExcelData("FinalReview", 2, 3);
+		ticketREmarksTextField.sendKeys(alertRemark);
 		rejectButton.click();
 		driver.switchTo().alert().accept();
 	}
